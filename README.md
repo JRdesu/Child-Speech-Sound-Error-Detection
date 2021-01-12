@@ -1,4 +1,4 @@
-# An-end-to-end-approach-to-child-speech-disorder-detection
+# Child Speech Sound Disorder Detection
  Training data  	  Dev data            Test data
 --------------      ------------       ---------------------------
 	150					30	                  36+20
