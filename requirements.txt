@@ -1,0 +1,7 @@
+!pip install torch
+!pip install transformer
+!pip install datasets
+!pip install phonemizer
+!pip install jiwer
+!pip install librosa
+!apt-get install espeak -y
