@@ -1,4 +1,4 @@
-# Child Speech Sound Disorder Detection
+# Child Speech Sound Error Detection
  Training data  	  Dev data            Test data
 --------------      ------------       ---------------------------
 	150					30	                  36+20
