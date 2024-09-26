@@ -1,2 +1,6 @@
 # Child Speech Sound Error Detection
-You can find the checkpoint-5500 in the google drive
+Please try eval.py
+
+This checkpoint leverages the pretrained checkpoint wav2vec2-large-lv60 and is fine-tuned on CommonVoice and CUCHILD to recognize phonetic labels in Cantonese. When using the model make sure that your speech input is sampled at 16kHz. Note that the model outputs a string of phonetic labels.
+
+The checkpoint "checkpoint-5500" is too big to upload. Please contact me to share it via other methods such as google drive.
