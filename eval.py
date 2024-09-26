@@ -6,13 +6,13 @@ from datasets import load_dataset, load_metric
 from torch.utils.data import DataLoader, Dataset, SequentialSampler
 import math
 
-model_checkpoint = "./wav2vec2-phn/checkpoint-5500"
+model_checkpoint = "./checkpoint/checkpoint-5500"
 model = Wav2Vec2ForCTC.from_pretrained(model_checkpoint)
 # Load the configuration of a pre-trained model
 config = Wav2Vec2Config.from_pretrained(model_checkpoint)
 # processor = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-lv-60-espeak-cv-ft")
 # Wav2Vec2Processor.save_pretrained(processor, model_checkpoint)
-processor = Wav2Vec2Processor.from_pretrained("./checkpoint/checkpoint-3500")
+processor = Wav2Vec2Processor.from_pretrained("./checkpoint/checkpoint-5500")
 tokenizer = processor.tokenizer
 
 model.to("cuda")
