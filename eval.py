@@ -4,14 +4,13 @@ from transformers import Wav2Vec2Config
 import datasets
 from datasets import load_dataset, load_metric
 from torch.utils.data import DataLoader, Dataset, SequentialSampler
-import math
+from typing import Any, Dict, List, Optional, Union
+import librosa
 
 model_checkpoint = "./checkpoint/checkpoint-5500"
 model = Wav2Vec2ForCTC.from_pretrained(model_checkpoint)
 # Load the configuration of a pre-trained model
 config = Wav2Vec2Config.from_pretrained(model_checkpoint)
-# processor = Wav2Vec2Processor.from_pretrained("facebook/wav2vec2-lv-60-espeak-cv-ft")
-# Wav2Vec2Processor.save_pretrained(processor, model_checkpoint)
 processor = Wav2Vec2Processor.from_pretrained("./checkpoint/checkpoint-5500")
 tokenizer = processor.tokenizer
 
@@ -41,7 +40,6 @@ def clean_token_ids(token_ids: List[int]) -> List[int]:
 
 
 #=======================================================================
-import librosa
 speech, sr = librosa.load('./demo/gamjyu_k_t_fronting+m_ng_backing.wav')
 input_values = processor(speech, sampling_rate=16000).input_values[0]
 inputs = torch.tensor(input_values).unsqueeze(0)
@@ -52,6 +50,6 @@ with torch.no_grad():
     predicted_ids1 = clean_token_ids(predicted_ids[0].int().tolist())
     predicted_chr1 = tokenizer.decode(predicted_ids1, group_tokens=False)
     print(f"{predicted_chr1}\n")
-    # the output should be "t aː m j yː"
+    # the output should be "t aː ŋ j yː"
 
   
