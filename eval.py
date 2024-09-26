@@ -42,7 +42,7 @@ def clean_token_ids(token_ids: List[int]) -> List[int]:
 
 #=======================================================================
 import librosa
-speech, sr = librosa.load('demo/tai_zi_zap.wav')
+speech, sr = librosa.load('./demo/gamjyu_k_t_fronting+m_ng_backing.wav')
 input_values = processor(speech, sampling_rate=16000).input_values[0]
 inputs = torch.tensor(input_values).unsqueeze(0)
 
@@ -52,6 +52,6 @@ with torch.no_grad():
     predicted_ids1 = clean_token_ids(predicted_ids[0].int().tolist())
     predicted_chr1 = tokenizer.decode(predicted_ids1, group_tokens=False)
     print(f"{predicted_chr1}\n")
-    # the output should be "tʰ aː i ʃ iː tʃ ɐ p"
+    # the output should be "t aː m j yː"
 
   
