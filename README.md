@@ -1,11 +1,12 @@
 # Child Speech Sound Error Detection
 
-Please try eval.py
+This is a speech sound error detection system for Cantonese child speech. The core of this system is a Wav2Vec2-based phone recognizer which is finetuned from the checkpoint "wav2vec2-large-lv60" using Cantonese speech from CommonVoice and CUCHILD datasets. 
 
-The checkpoint "checkpoint-5500" is too big to upload. Please contact me to share it via other methods such as google drive.
 
-This checkpoint leverages the pretrained checkpoint wav2vec2-large-lv60 and is fine-tuned on CommonVoice and CUCHILD to recognize phonetic labels in Cantonese. 
+<img width="790" alt="sit_framework" src="https://github.com/user-attachments/assets/b5e6fb1b-5556-4f9c-8c32-9912218256d1">
 
-When using the model make sure that your speech input is sampled at 16kHz. Note that the model outputs a string of phonetic labels.
+
+
+
 
 
